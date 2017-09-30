@@ -95,26 +95,35 @@ export NVM_DIR="/Users/daishen/.nvm"
 
 
 alias oldredshift="PGPASSWORD=Pointblank1 psql -h plaza.cg1hpgpnkz9s.us-east-1.redshift.amazonaws.com -U pointblank_user -d dev -p 5439"
-alias redshift="psql -h 54.145.166.116 -p 5439 -U outletuser -W outlet PASSWORD=0utletPass"
+#alias redshift="psql -h 54.145.166.116 -p 5439 -U outletuser -W outlet PASSWORD=0utletPass"
+alias redshift="PGPASSWORD=0utletPass psql -h outlet.cg1hpgpnkz9s.us-east-1.redshift.amazonaws.com -U outletuser -d outlet -p 5439"
+
+
+
+
+
 alias plaza_start="cd ~/code/bazaar/server && gulp"
 alias prettyjson=' python -m json.tool'
 alias bpopen="nano ~/.bash_profile"
 alias bpsource="source ~/.bash_profile"
 
-alias pgDev="psql --host=10.0.200.124 --username=bz_user bazaar "
-alias pgTest="psql --host=10.0.200.124 --username=bz_user bazaar_test "
-alias pgProd="psql --host=10.0.216.236 --username=bz_user bazaar "
+alias pgDev="psql --host=10.0.200.124 -p 5432 --username=bz_user bazaar "
+alias pgTest="psql --host=10.0.200.124 -p 6432 --username=bz_user bazaar_test "
+alias pgProd="psql --host=10.0.216.236  -p 6432 --username=bz_user bazaar "
 
 
 alias ssh-plaza="csshX --ssh_args '-i ~/.ssh/bazaar_2016.pem' --login ubuntu 10.0.216.154 10.0.216.155 10.0.216.208 10.0.216.235"
 alias ssh-haproxy="csshX --ssh_args '-i ~/.ssh/bazaar_2016.pem' ubuntu@10.0.213.183 ubuntu@10.0.213.182 ubuntu@10.0.212.137 ec2-user@10.0.212.74"
 alias ssh-halo="ssh -i ~/.ssh/bazaar_2016.pem ubuntu@10.0.216.37"
 alias ssh-outlet="ssh ubuntu@10.0.212.234"
-alias vpn="cd ~/code/dr22_v0_ldap_vpn && sudo /usr/local/sbin/openvpn config.ovpn"
+alias vpn="cd ~/Downloads/castle_ldap_vpn && sudo /usr/local/sbin/openvpn config.ovpn"
 
 alias redisProd="redis-cli -h 10.0.216.47 -c -p 9000"
 alias redisDev="redis-cli -h 10.0.200.124 -c -p 6379"
 alias haloDev="nodemon -w ../../ boot.js app.js --devel"
+alias devBox="ssh dshen@10.0.216.194"
+
+
 # Setting PATH for Python 3.6
 # The original version is saved in .bash_profile.pysave
 PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
