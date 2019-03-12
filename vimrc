@@ -122,3 +122,8 @@ set bg=dark
 " map <leader>w :w!<cr>
 
 " For more options see ":help option-list" and ":options".
+set hidden 
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
